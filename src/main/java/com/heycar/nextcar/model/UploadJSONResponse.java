@@ -4,24 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UploadJSONResponse {
+	
 	public UploadJSONResponse() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public UploadJSONResponse(List<DealerListing> uploadJSONRequest) {
+	public UploadJSONResponse(List<DealerListing> uploadJSON) {
 		super();
-		this.uploadJSONRequest = uploadJSONRequest;
+		this.uploadJSON = uploadJSON;
 	}
 
-	List<DealerListing> uploadJSONRequest=new ArrayList<>();
+	List<DealerListing> uploadJSON=new ArrayList<>();
 
-	public List<DealerListing> getUploadJSONRequest() {
-		return uploadJSONRequest;
+	public List<DealerListing> getUploadJSON() {
+		return uploadJSON;
 	}
 
+	public void setUploadJSON(List<DealerListing> uploadJSON) {
+		this.uploadJSON = uploadJSON;
+	}
 
-	public void setUploadJSONRequest(List<DealerListing> uploadJSONRequest) {
-		this.uploadJSONRequest = uploadJSONRequest;
-	} 
 	
 }
