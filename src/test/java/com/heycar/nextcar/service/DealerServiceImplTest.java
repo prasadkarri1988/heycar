@@ -30,7 +30,7 @@ public class DealerServiceImplTest {
     	List<DealerListing> uploadList=new ArrayList<>();
     	uploadList.add(dl);
     	UploadJSONResponse ur=dealerServiceImpl.saveOrUpdate(uploadList);
-    	assertTrue(ur.getUploadJSONRequest().size()==1);
+    	assertTrue(ur.getUploadJSON().size()==1);
     }
     
     
@@ -44,7 +44,7 @@ public class DealerServiceImplTest {
     	DealerListing dl2=new DealerListing(111, cl2, "1");
     	uploadList.add(dl2);
     	UploadJSONResponse ur=dealerServiceImpl.saveOrUpdate(uploadList);
-    	assertTrue(ur.getUploadJSONRequest().size()==2);
+    	assertTrue(ur.getUploadJSON().size()==2);
     }
     
     

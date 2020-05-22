@@ -35,7 +35,7 @@ public class DealerListingRepositoryTest {
     	List<DealerListing> uploadList=new ArrayList<>();
     	uploadList.add(dl);
     	UploadJSONResponse ur=dealerServiceImpl.saveOrUpdate(uploadList);
-    	assertTrue(ur.getUploadJSONRequest().size()==1);
+    	assertTrue(ur.getUploadJSON().size()==1);
 		Optional<DealerListing> page = repository.findByDealerIdAndListingId(111, "1");
 		assertTrue(page.get().getDealerId()==111); 
 	}
