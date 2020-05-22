@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,8 +28,6 @@ import com.heycar.nextcar.service.DealerService;
 @RequestMapping("/upload/v1")
 public class DealerController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(DealerController.class);
-
 	@Autowired
 	private DealerService dealerService;
 
@@ -47,10 +43,8 @@ public class DealerController {
 			dealerService.saveOrUpdate(dealerCarSpecificationMapper.map(csv, dealerId));
 			uploadCSVResponse = dealerCarSpecificationMapper.getUploadCSVResponse();
 		} catch (IOException exception) {
-			LOGGER.error("IOException in sendDealerInfoViaCSV :: {} ", exception.getMessage());
 			throw new FileParseException(exception.getMessage());
 		} catch (Exception exception) {
-			LOGGER.error("FileParseException in sendDealerInfoViaCSV :: {} ", exception.getMessage());
 			throw new ApplicationProcessException(exception.getMessage());
 		}
 
@@ -68,7 +62,6 @@ public class DealerController {
 					.saveOrUpdate(dealerCarSpecificationMapper.map(dealerCarSpecificationInJsonList, dealerId));
 
 		} catch (Exception exception) {
-			LOGGER.error("FileParseException in sendDealerInfoViaCSV :: {} ", exception.getMessage());
 			throw new ApplicationProcessException(exception.getMessage());
 		}
 
