@@ -14,9 +14,6 @@ public class CarListing implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public CarListing() {
-	}
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -40,6 +37,11 @@ public class CarListing implements Serializable {
 	@Column
 	private Integer year;
 
+
+	public CarListing() {
+	}
+	
+	
 	public CarListing(String make, String model, Integer kW, String color, BigDecimal price, Integer year) {
 		this.make = make;
 		this.model = model;
@@ -108,6 +110,4 @@ public class CarListing implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
 }
