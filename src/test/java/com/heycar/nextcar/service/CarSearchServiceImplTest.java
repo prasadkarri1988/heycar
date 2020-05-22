@@ -52,7 +52,6 @@ public class CarSearchServiceImplTest {
 		CarListingRequest carListingRequest = new CarListingRequest();
 		carListingRequest.setColor("red");
 		Page<CarListing> searchPages = carSearchServiceImpl.searchCars(carListingRequest, 0, 10);
-		System.out.println(searchPages.getNumberOfElements());
 		assertTrue(searchPages.getNumberOfElements() == 1);
 	}
 
@@ -64,7 +63,6 @@ public class CarSearchServiceImplTest {
 		CarListingRequest carListingRequest = new CarListingRequest();
 		carListingRequest.setYear(1995);
 		Page<CarListing> searchPages = carSearchServiceImpl.searchCars(carListingRequest, 0, 10);
-		System.out.println(searchPages.getNumberOfElements());
 		assertTrue(searchPages.getNumberOfElements() == 1);
 	}
 
