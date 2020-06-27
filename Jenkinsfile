@@ -7,7 +7,7 @@ pipeline {
                 //git clone  
                 deleteDir()
                 echo 'Clone the latest code from the code-base'
-                sh 'git clone https://github.com/prasadkarri1988/heycar.git'       
+                'git clone https://github.com/prasadkarri1988/heycar.git'       
             }
             
         }
@@ -16,7 +16,7 @@ pipeline {
                 //Execute testcases 
                 echo 'Execute test cases'
                 dir("heycar"){
-                    sh 'mvn clean test' 
+                     'mvn clean test' 
                 }               
             }
             
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Execute Maven Build'
                 dir("heycar"){
-                    sh 'mvn clean package'
+                     'mvn clean package'
                 }
             }
             
