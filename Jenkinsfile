@@ -30,25 +30,8 @@ pipeline {
             }
             
         }
-        stage("Docker Build") {            
-            steps {
-                echo 'Execute Docker Build'
-                dir("heycar"){
-                    sh "docker build -t heycar:\"${env.BUILD_NUMBER}\" . "
-                    docker push prasadkarri1988/heycar:version1
-                    echo "Check the Docker image"
-                    sh 'docker images'
-                }
-            }
-            
-        }
-        stage("Deployment") {
-            steps {
-                dir("heycar"){
-                    sh "docker run -d -p 80:8080 heycar:\"${env.BUILD_NUMBER}\""
-                }
-            }            
-        }
+       
       
-    }//end stages
+    }
 }
+         
